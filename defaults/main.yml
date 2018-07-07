@@ -1,2 +1,5 @@
 ---
 # defaults file for sbaerlocher.onedrive
+
+onedrive_disable: true
+onedrive_remove: false
