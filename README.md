@@ -1,6 +1,6 @@
 # Ansible Role: onedrive
 
-[![Build Status](https://travis-ci.org/sbaerlocher/ansible.onedrive.svg?branch=master)](https://travis-ci.org/sbaerlocher/ansible.onedrive) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://sbaerlo.ch/licence) [![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-onedrive-blue.svg)](https://galaxy.ansible.com/sbaerlocher/onedrive)
+[![Build Status](https://travis-ci.org/sbaerlocher/ansible.onedrive.svg?branch=master)](https://travis-ci.org/sbaerlocher/ansible.onedrive) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://sbaerlo.ch/licence) [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-onedrive-blue.svg)](https://galaxy.ansible.com/sbaerlocher/onedrive)
 
 ## Description
 
@@ -18,10 +18,10 @@ None
 
 ## Role Variables
 
-| Variable             | Default     | Comments (type)                                   |
-| :---                 | :---        | :---                                              |
-| onedrive_disable | true | Disables OneDrive in the registry. |
-| onedrive_remove | false | Uninstalls OneDrive on the device. |
+| Variable         | Default | Comments (type)                    |
+| :--------------- | :------ | :--------------------------------- |
+| onedrive_disable | true    | Disables OneDrive in the registry. |
+| onedrive_remove  | false   | Uninstalls OneDrive on the device. |
 
 ## Dependencies
 
@@ -32,18 +32,22 @@ None
 ```yml
 - hosts: all
   roles:
-     - sbaerlocher.onedrive
+    - sbaerlocher.onedrive
 ```
 
 ## Changelog
 
-### 1.0
+### 1.1.0
 
-* inital commit
+- Compatible with 2.9.0
+
+### 1.0.0
+
+- Inital commit
 
 ## Author
 
-* [Simon Bärlocher](https://sbaerlocher.ch)
+- [Simon Bärlocher](https://sbaerlocher.ch)
 
 ## License
 
@@ -51,4 +55,4 @@ This project is under the MIT License. See the [LICENSE](https://sbaerlo.ch/lice
 
 ## Copyright
 
-(c) 2018, Simon Bärlocher
+(c) 2020, Simon Bärlocher
