@@ -2,7 +2,6 @@
 # tasks file for sbaerlocher.onedrive
 
 - block:
-
     - name: Set facts
       set_fact:
         onedrive_disable: true
@@ -17,7 +16,7 @@
       become_user: SYSTEM
       become_method: runas
       win_shell: "C:\\Windows\\System32\\OneDriveSetup.exe /uninstall"
-      when: register_x86_onedrive.stat.exists
+      when: register_x86_onedrive.stat.exists | bool
 
     - name: Check if OneDrive installed x64
       win_stat:
@@ -29,12 +28,11 @@
       become_user: SYSTEM
       become_method: runas
       win_shell: "C:\\Windows\\SysWOW64\\OneDriveSetup.exe /uninstall"
-      when: register_x64_onedrive.stat.exists
+      when: register_x64_onedrive.stat.exists | bool
 
   when: onedrive_remove
 
 - block:
-
     - name: OneDrive Policies
       win_regedit:
         path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\OneDrive
@@ -62,4 +60,4 @@
         path: "C:\\Users\\Default\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\OneDrive.lnk"
         state: absent
 
-  when: onedrive_disable
+  when: onedrive_disable | bool
